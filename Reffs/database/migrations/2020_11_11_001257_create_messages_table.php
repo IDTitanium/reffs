@@ -15,9 +15,8 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->uuid();
-            $table->string('owner_id');
-            $table->string('receiver_id');
-            $table->string('owner_type');
+            $table->morphs('owner');
+            $table->foreignUuid('receiver_id')->constrained('users');
             $table->longText('message');
             $table->timestamps();
         });
