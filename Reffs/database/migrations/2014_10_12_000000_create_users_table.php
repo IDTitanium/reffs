@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('other_name');
-            $table->unsignedBigInteger('phone_no');
+            $table->string('phone_no');
             $table->string('status');
             $table->string('img_link');
             $table->boolean('is_admin');

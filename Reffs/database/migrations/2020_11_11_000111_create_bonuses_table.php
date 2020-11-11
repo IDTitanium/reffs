@@ -15,7 +15,7 @@ class CreateBonusesTable extends Migration
     {
         Schema::create('bonuses', function (Blueprint $table) {
             $table->uuid()->primary();
-            $table->foreignUuid('user_id');
+            $table->foreignUuid('user_id')->constrained('users');
             $table->unsignedbiginteger('mileage');
             $table->bigInteger('bonus');
             $table->string('type');
