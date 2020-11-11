@@ -14,9 +14,9 @@ class CreateBonusesTable extends Migration
     public function up()
     {
         Schema::create('bonuses', function (Blueprint $table) {
-            $table->uuid();
-            $table->foreignId('user_id');
-            $table->integer('mileage');
+            $table->uuid()->primary();
+            $table->foreignUuid('user_id');
+            $table->unsignedbiginteger('mileage');
             $table->bigInteger('bonus');
             $table->string('type');
             $table->timestamps();

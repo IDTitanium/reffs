@@ -17,6 +17,8 @@ class CreateMessagesTable extends Migration
             $table->uuid();
             $table->string('owner_id');
             $table->string('receiver_id');
+            $table->string('owner_type');
+            $table->longText('message');
             $table->timestamps();
         });
     }

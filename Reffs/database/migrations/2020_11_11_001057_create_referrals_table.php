@@ -14,9 +14,9 @@ class CreateReferralsTable extends Migration
     public function up()
     {
         Schema::create('referrals', function (Blueprint $table) {
-            $table->uuid();
-            $table->unsignedBigInteger('referrer_id');
-            $table->unsignedDecimal('referree_id');
+            $table->uuid()->primary();
+            $table->foreignUuid('referrer_id');
+            $table->foreignUuid('referree_id');
             $table->timestamps();
         });
     }

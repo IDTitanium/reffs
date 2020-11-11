@@ -14,8 +14,8 @@ class CreateUserBankAcctsTable extends Migration
     public function up()
     {
         Schema::create('user_bank_accts', function (Blueprint $table) {
-            $table->uuid();
-            $table->foreignId('user_id');
+            $table->uuid()->primary();
+            $table->foreignUuid('user_id');
             $table->foreignId('bank_id');
             $table->string('acct_no');
             $table->string('acct_name');
