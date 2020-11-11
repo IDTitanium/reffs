@@ -15,8 +15,8 @@ class CreateReferralsTable extends Migration
     {
         Schema::create('referrals', function (Blueprint $table) {
             $table->uuid()->primary();
-            $table->foreignUuid('referrer_id')->constrained('referrers');
-            $table->foreignUuid('referree_id')->constrained('referres');
+            $table->foreignUuid('referrer_id')->constrained('users');
+            $table->foreignUuid('referree_id')->constrained('users');
             $table->timestamps();
         });
     }
